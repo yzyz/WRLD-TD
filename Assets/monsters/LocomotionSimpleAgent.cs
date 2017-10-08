@@ -19,6 +19,10 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 		anim.SetBool ("grabweapon", true);
 	}
 
+	void Awake() {
+		Start ();
+	}
+
 	void Update ()
 	{
 		if (anim.GetBool ("dead"))
