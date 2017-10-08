@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class LocomotionSimpleAgent : MonoBehaviour {
 	Animator anim;
 	NavMeshAgent agent;
+    NavMeshObstacle obstacle;
 	Vector2 smoothDeltaPosition = Vector2.zero;
 	Vector2 velocity = Vector2.zero;
 
@@ -13,6 +14,8 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 	{
 		anim = GetComponent<Animator> ();
 		agent = GetComponent<NavMeshAgent> ();
+        obstacle = GetComponent<NavMeshObstacle>();
+        obstacle.enabled = false;
 		// Don’t update position automatically
 		agent.updatePosition = false;
 		anim.SetBool ("grounded", true);
@@ -27,6 +30,21 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 	{
 		if (anim.GetBool ("dead"))
 			return;
+        if (ReachedDestination())
+        {
+            agent.enabled = false;
+            obstacle.enabled = true;
+            anim.SetFloat("ver", 0);
+            anim.SetFloat("hor", 0);
+            anim.SetFloat("speed", 0);
+            anim.SetBool("attack", true);
+            return;
+        } else
+        {
+            obstacle.enabled = false;
+            agent.enabled = true;
+            anim.SetBool("attack", false);
+        }
 		Vector3 worldDeltaPosition = agent.nextPosition - transform.position;
 
 		// Map 'worldDeltaPosition' to local space
@@ -42,7 +60,7 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 		if (Time.deltaTime > 1e-5f)
 			velocity = smoothDeltaPosition / Time.deltaTime;
 
-		bool shouldMove = velocity.magnitude > 0.5f && agent.remainingDistance > agent.radius;
+		//bool shouldMove = velocity.magnitude > 0.5f && agent.remainingDistance > agent.radius;
 
 		// Update animation parameters
 		//anim.SetBool("move", shouldMove);
@@ -54,11 +72,20 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 		//GetComponent<LookAt>().lookAtTargetPosition = agent.steeringTarget + transform.forward;
 	}
 
-	void OnAnimatorMove ()
+    bool ReachedDestination()
+    {
+        if (obstacle.enabled) return true;
+        return !agent.pathPending &&
+               agent.remainingDistance <= agent.stoppingDistance &&
+               (!agent.hasPath || agent.velocity.sqrMagnitude == 0f);
+    }
+
+    void OnAnimatorMove ()
 	{
 		if (anim.GetBool ("dead"))
 			return;
 		// Update position to agent position
-		transform.position = agent.nextPosition;
+        if (agent.enabled)
+		    transform.position = agent.nextPosition;
 	}
 }
