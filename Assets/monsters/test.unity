@@ -108,7 +108,7 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 23800000, guid: cbdfb5e421e302a4d82ad20091eb9c5b, type: 2}
---- !u!1001 &402441389
+--- !u!1001 &873233053
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -145,21 +145,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4978451903045016, guid: 936fa9ab1c323c14bbe289f7229beccd, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: goal
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 82730540440368684, guid: 936fa9ab1c323c14bbe289f7229beccd,
-        type: 2}
-      propertyPath: panLevelCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82730540440368684, guid: 936fa9ab1c323c14bbe289f7229beccd,
-        type: 2}
-      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 936fa9ab1c323c14bbe289f7229beccd, type: 2}
@@ -244,7 +230,7 @@ Transform:
   m_LocalScale: {x: 10, y: 0.2, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046191166
 GameObject:

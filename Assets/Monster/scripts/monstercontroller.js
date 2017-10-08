@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-
+/*
 var maxVelocityChange = 10.0;
 var canJump = true;
 var jumpHeight = 2.0;
@@ -21,7 +21,7 @@ public var mask : LayerMask;
 public var downcastrange : float =1.2;
 private var horizontalSpeed : float;
 
-var grounded : boolean;
+var grounded : boolean;*/
 var myaudiosource : AudioSource;
 var target : Transform;
 var chest : Transform;
@@ -54,7 +54,7 @@ private var fightmodus : boolean = false;
 private var didselect : boolean = false;
 private var canattack : boolean = true;
 var addvector : Vector3;
-
+/*
 function Awake()
 {
  	GetComponent.<Rigidbody>().freezeRotation = true;
@@ -223,7 +223,7 @@ function CalculateJumpVerticalSpeed ()
 	// From the jump height and gravity we deduce the upwards speed 
 	// for the character to reach at the apex.
 	return Mathf.Sqrt(2 * jumpHeight * gravity);
-}
+}*/
 function grabshield()
 {
 	shield.parent = lefthandpos;

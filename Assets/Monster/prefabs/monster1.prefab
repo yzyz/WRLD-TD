@@ -957,7 +957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &168192
 GameObject:
   m_ObjectHideFlags: 1
@@ -1162,8 +1162,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135136}
-  m_LocalRotation: {x: -0.14490639, y: 0.6548229, z: 0.7242399, w: 0.16026776}
-  m_LocalPosition: {x: 0.083332315, y: -0.19518048, z: -0.2788992}
+  m_LocalRotation: {x: 0.14014636, y: -0.9839618, z: 0.098763935, w: -0.049233165}
+  m_LocalPosition: {x: 0.24465857, y: 0.054970212, z: 0.40350977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435200}
@@ -1618,8 +1618,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135220}
-  m_LocalRotation: {x: -0.6684545, y: 0.000000005096031, z: -0.0000000054127067, w: 0.743753}
-  m_LocalPosition: {x: 0.006682279, y: -0.26649892, z: -0.121770926}
+  m_LocalRotation: {x: -0.77185166, y: 0.18940262, z: -0.6063647, w: -0.02633372}
+  m_LocalPosition: {x: -0.29644346, y: 0.040679563, z: 0.41530716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435200}
@@ -2435,10 +2435,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bc2c423d701e45f46af5acf418547469, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.0682522
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2623,7 +2623,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactPrefab: {fileID: 400000, guid: 1527ff41453632b44a4b04882b7378f3, type: 2}
-  mask: {}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
   damage: 25
   force: 250
   range: 3
@@ -2643,19 +2645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ad5c45bf8cd5d4fb4314e12e07c63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocityChange: 10
-  canJump: 1
-  jumpHeight: 1.4
-  jumpinterval: 2
-  speed: 2
-  runspeed: 4.5
-  smoothSpeed: 2
-  gravity: 16
-  rotateSpeed: 8
-  dampTime: 3
-  mask: {}
-  downcastrange: 1.5
-  grounded: 1
   myaudiosource: {fileID: 8268192}
   target: {fileID: 468192}
   chest: {fileID: 435200}
@@ -2685,7 +2674,9 @@ MonoBehaviour:
   target: {fileID: 468188}
   targetOffset: {x: 0, y: 1.5, z: 0}
   distance: 2.5
-  lineOfSightMask: {}
+  lineOfSightMask:
+    serializedVersion: 2
+    m_Bits: 0
   closerRadius: 0.2
   closerSnapLag: 0.1
   xSpeed: 120

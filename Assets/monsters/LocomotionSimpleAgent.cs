@@ -16,6 +16,7 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 		// Don’t update position automatically
 		agent.updatePosition = false;
 		anim.SetBool ("grounded", true);
+		anim.SetBool ("grabweapon", true);
 	}
 
 	void Update ()
