@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 114205611576758856}
   - component: {fileID: 195337442575281604}
   - component: {fileID: 114862270352199872}
+  - component: {fileID: 114765390153039694}
   - component: {fileID: 114572832698799864}
   - component: {fileID: 82472039876751478}
   - component: {fileID: 114551784980198522}
@@ -2448,18 +2449,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc99bba037f3052419d7e5b43c516041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactPrefab: {fileID: 0}
+  impactPrefab: {fileID: 400000, guid: 1527ff41453632b44a4b04882b7378f3, type: 2}
   mask:
     serializedVersion: 2
     m_Bits: 0
   damage: 25
   force: 250
-  range: 4
-  shortrange: 1
+  range: 3
+  shortrange: 0.85
   shortradius: 1
   shortdamage: 10
-  radius: 5
-  raystartpos: {fileID: 0}
+  radius: 1.5
+  raystartpos: {fileID: 4781965941935494}
 --- !u!114 &114572832698799864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2486,6 +2487,17 @@ MonoBehaviour:
   holster1sound: {fileID: 8300000, guid: 5286367a706955f42949cfb6db9fcefe, type: 3}
   holster2sound: {fileID: 8300000, guid: 863bd0075c66f264fa8f3557cb7ed179, type: 3}
   addvector: {x: -45, y: 180, z: 0}
+--- !u!114 &114765390153039694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102398529998356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729ca6640472214488ff1b94b359e9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114862270352199872
 MonoBehaviour:
   m_ObjectHideFlags: 1
