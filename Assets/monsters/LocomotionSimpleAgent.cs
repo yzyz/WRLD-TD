@@ -9,6 +9,7 @@ public class LocomotionSimpleAgent : MonoBehaviour {
     NavMeshObstacle obstacle;
 	Vector2 smoothDeltaPosition = Vector2.zero;
 	Vector2 velocity = Vector2.zero;
+    public int damage = 20;
 
 	void Start ()
 	{
@@ -38,6 +39,18 @@ public class LocomotionSimpleAgent : MonoBehaviour {
             anim.SetFloat("hor", 0);
             anim.SetFloat("speed", 0);
             anim.SetBool("attack", true);
+
+            if (anim.IsInTransition(2) && anim.GetNextAnimatorStateInfo(2).nameHash == Animator.StringToHash("overridelayer.attack"))
+            {
+                GameObject hacky = GameObject.Find("Hacky");
+                float dist = Vector3.Distance(transform.position, hacky.transform.position);
+                print(dist);
+                if (dist < .7)
+                {
+                    GameObject.Find("Script Manager").GetComponent<GameStateManager>().Damage(damage);
+                }
+            }
+
             return;
         } else
         {

@@ -28,6 +28,10 @@ public class MonsterSpawners : MonoBehaviour {
 		NavMeshAgent agent = monster.GetComponentInChildren<NavMeshAgent> ();
 		// set agent destination
 		agent.avoidancePriority = Random.Range(0, 100);
+        NavMeshObstacle obstacle = monster.GetComponentInChildren<NavMeshObstacle>();
+        obstacle.enabled = false;
+        agent.enabled = true;
+        agent.destination = GameObject.Find("Script Manager").GetComponent<GameStateManager>().hacky.transform.position;
 	}
 
 	public static Transform GetLiveMonsters() {

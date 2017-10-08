@@ -23,6 +23,7 @@ public class GameStateManager : MonoBehaviour {
     private string baseName = "Buildings_0_01131232132010_landmark_us_sf_transamericapyramid_INDEX0";
     
     public GameObject baseObject;
+    public GameObject hacky;
 
     private Material[] oldMaterials = new Material[1];
     private Material[] newMaterials = new Material[2];
@@ -31,7 +32,7 @@ public class GameStateManager : MonoBehaviour {
     void Start () {
         health = maxHealth;
 
-        Invoke("StartGame", 5);
+        Invoke("StartGame", 3);
 	}
 
     void StartGame()
@@ -78,5 +79,17 @@ public class GameStateManager : MonoBehaviour {
                 on = true;
             }
         }
+    }
+
+    public void Damage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+        
     }
 }
