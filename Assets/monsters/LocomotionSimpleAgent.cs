@@ -48,9 +48,9 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 		//anim.SetBool("move", shouldMove);
 		//anim.SetFloat ("velx", velocity.x);
 		//anim.SetFloat ("vely", velocity.y);
-		anim.SetFloat("ver", velocity.y);
-		anim.SetFloat("hor", velocity.x);
-		anim.SetFloat ("speed", velocity.magnitude);
+		anim.SetFloat("ver", velocity.y * 5);
+		anim.SetFloat("hor", velocity.x * 5);
+		anim.SetFloat ("speed", velocity.magnitude * 5);
 		//GetComponent<LookAt>().lookAtTargetPosition = agent.steeringTarget + transform.forward;
 	}
 
