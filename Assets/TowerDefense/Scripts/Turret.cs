@@ -46,12 +46,23 @@ public class Turret : MonoBehaviour {
 		GameObject nearestEnemy = null;
 		foreach (GameObject enemy in enemies)
 		{
-			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-			if (distanceToEnemy < shortestDistance)
-			{
-				shortestDistance = distanceToEnemy;
-				nearestEnemy = enemy;
-			}
+            Vector3 diffVec = enemy.transform.position - transform.position;
+			float distanceToEnemy = Vector3.Magnitude(diffVec);
+            if (distanceToEnemy > range)
+                continue;
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.Normalize(diffVec), out hit, range))
+            {
+                if (hit.collider.gameObject.CompareTag("Enemy"))
+                {
+                    if (distanceToEnemy < shortestDistance)
+			        {
+				        shortestDistance = distanceToEnemy;
+				        nearestEnemy = enemy;
+			        }
+                }
+            }
 		}
 
 		if (nearestEnemy != null && shortestDistance <= range)
