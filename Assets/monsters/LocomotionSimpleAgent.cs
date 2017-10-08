@@ -21,6 +21,8 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 
 	void Update ()
 	{
+		if (anim.GetBool ("dead"))
+			return;
 		Vector3 worldDeltaPosition = agent.nextPosition - transform.position;
 
 		// Map 'worldDeltaPosition' to local space
@@ -50,6 +52,8 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 
 	void OnAnimatorMove ()
 	{
+		if (anim.GetBool ("dead"))
+			return;
 		// Update position to agent position
 		transform.position = agent.nextPosition;
 	}

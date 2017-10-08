@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 82472039876751478}
   - component: {fileID: 114551784980198522}
   - component: {fileID: 114153629041231480}
+  - component: {fileID: 114532524345496764}
   m_Layer: 10
   m_Name: monster1AnimsNormal
   m_TagString: Player
@@ -2424,6 +2425,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5ea527a09b0ab4b9aa14a610252bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114532524345496764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102398529998356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a705aaea91349d4d99de7f4f40c9d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!114 &114551784980198522
 MonoBehaviour:
   m_ObjectHideFlags: 1
