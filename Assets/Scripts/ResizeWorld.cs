@@ -11,7 +11,7 @@ public class ResizeWorld : MonoBehaviour {
 	
 	void Resize() {
         GetComponent<WrldMap>().enabled = false;
-		transform.localScale = Vector3.one / 115f;
+		transform.localScale = Vector3.one / 100f;
 
         GetComponent<NavMeshSurface>().BuildNavMesh();
 	}

@@ -12,11 +12,16 @@ public class Health : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 	}
 	
-	void TakeDamage(float dmg) {
+	public void TakeDamage(float dmg) {
 		hp -= dmg;
 		if (hp <= 0)
 			Die ();
 	}
+
+    public void Slow(float slowAmount)
+    {
+
+    }
 
 	void Die() {
 		anim.SetBool ("dead", true);
@@ -30,3 +35,4 @@ public class Health : MonoBehaviour {
 	}
 	*/
 }
+

@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class Turret : MonoBehaviour {
+public class Turret1 : MonoBehaviour {
 
 	private Transform target;
-	private Health targetEnemy;
+	private Enemy targetEnemy;
 
 	[Header("General")]
 
@@ -57,7 +57,7 @@ public class Turret : MonoBehaviour {
 		if (nearestEnemy != null && shortestDistance <= range)
 		{
 			target = nearestEnemy.transform;
-			targetEnemy = nearestEnemy.GetComponent<Health>();
+			targetEnemy = nearestEnemy.GetComponent<Enemy>();
 		} else
 		{
 			target = null;
