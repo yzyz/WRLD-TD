@@ -65,7 +65,7 @@ Transform:
   m_GameObject: {fileID: 1000012160685858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.152, y: 1.568, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4000011027679858}
   m_Father: {fileID: 0}
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  explosionRadius: 8
+  damage: 50
+  explosionRadius: 0.25
   impactEffect: {fileID: 1000013060428206, guid: b47b9de8edd166346ad81c4a4834eca1,
     type: 2}
