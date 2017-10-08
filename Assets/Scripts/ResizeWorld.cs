@@ -13,8 +13,6 @@ public class ResizeWorld : MonoBehaviour {
         GetComponent<WrldMap>().enabled = false;
 		transform.localScale = Vector3.one / 115f;
 
-        GameObject terrain = transform.Find("Terrain").gameObject;
-
         GetComponent<NavMeshSurface>().BuildNavMesh();
 	}
 		
