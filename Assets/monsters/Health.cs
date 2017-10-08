@@ -25,7 +25,7 @@ public class Health : MonoBehaviour {
 
 	void Die() {
 		anim.SetBool ("dead", true);
-		Destroy (transform.parent.gameObject, 3);
+		Destroy (transform.parent.gameObject, 10);
 	}
 
 	/*
